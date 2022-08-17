@@ -1,0 +1,63 @@
+<h1>{{section.settings.heading}}</h1>
+
+<div class="faq">
+
+  {% for block in section.blocks %}
+
+    {% if block.type == 'QA' %}
+        <div class="question">
+          <input type="checkbox" id="question-{{forloop.index}}" class="question-toggle">
+          <label for="question-{{forloop.index}}" class="question-label">{{block.settings.title}}</label>
+          <div class="answer">{{block.settings.answer}}</div>
+        </div>
+    {% elsif block.type == 'headline' %}
+        <h4>{{block.settings.title}}</h4>
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Customer Questions",
+    "settings": [
+      {
+        "type": "text",
+        "label": "heading for faq",
+        "id": "heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "QA",
+        "name": "Question/Answer",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Customer questions",
+            "id": "title"
+          },
+          {
+            "type": "richtext",
+            "label": "answer for faq",
+            "id": "answer"
+          }
+        ]
+      },
+      {
+        "type": "headline",
+        "name": "headline",
+        "settings": [
+          {
+            "type": "text",
+            "label": "headline",
+            "id": "title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
