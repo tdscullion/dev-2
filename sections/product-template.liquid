@@ -135,6 +135,7 @@
       <div class="product-single__meta">
 
         <h1 class="product-single__title">{{ product.title }}</h1>
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: false, product: product %}
         <script>window.performance.mark('debut:product:title_visible');</script>
 
           <div class="product__price">
@@ -278,6 +279,7 @@
         {% endif %}
     </div>
   </div>
+  {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
 </div>
 
 {% unless product == empty %}

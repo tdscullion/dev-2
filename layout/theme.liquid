@@ -191,6 +191,8 @@
   </script>
 
   {{ content_for_header }}
+  {% comment %} Judgeme review app {% endcomment %}
+  {% render 'judgeme_core' %}
 </head>
 
 <body class="template-{{ request.page_type | handle }}">
