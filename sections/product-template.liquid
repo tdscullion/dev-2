@@ -270,8 +270,40 @@
         >
         </div>
 
-        <div class="product-single__description rte">
-          {{ product.description }}
+        <div class="rte">
+        {% comment %} Customm Tabs {% endcomment %}
+           <div class="container">
+              <div class="selector">
+                  <div class="tab tab-active">
+                      {{ 'products.product.description_title' | t }}
+                  </div>
+                   {% unless product.metafields.description.details == blank %}
+                  <div class="tab">
+                       {{ 'products.product.details_title' | t }}
+                  </div>
+                   {% endunless %}
+                  <div class="tab">
+                       {{ 'products.product.shipping_title' | t }}
+                  </div>
+              </div>
+              <div class="content">
+                  <div id="Description" class="content-body show-active">
+                      {{ product.description }}
+                  </div>
+                  {% unless product.metafields.description.details == blank %}
+                  <div id="Details" class="content-body">
+                    {{product.metafields.description.details}}
+                  </div>
+                  {% endunless  %}
+                 
+                  <div id="Shipping" class="content-body">
+                     {{ 'products.product.shipping_info' | t }}
+                  </div>
+              </div>
+          </div>
+
+          
+
         </div>
 
         {% if section.settings.show_share_buttons %}

@@ -391,7 +391,11 @@
       "unit_price_label": "Unit price",
       "view_cart": "View cart",
       "view_in_space": "View in your space",
-      "view_in_space_label": "View in your space, loads item in augmented reality window"
+      "view_in_space_label": "View in your space, loads item in augmented reality window",
+      "description_title": "Description",
+      "details_title": "Details",
+      "shipping_title": "Shipping",
+      "shipping_info": "Shipping can be shipped worldwide"
     }
   },
   "store_availability": {

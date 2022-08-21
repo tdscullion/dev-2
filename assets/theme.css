@@ -9168,3 +9168,45 @@ hr {
 .jdgm-histogram__bar-content {
   background: #1b48a3 !important;
 }
+
+/* CSS for product tabs */
+
+.container {
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+}
+.selector {
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+.tab {
+  padding: 10px;
+}
+.tab:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+.content {
+  padding: 10px;
+}
+.content-body {
+  display: none;
+  min-height: 270px;
+}
+.show-active {
+  display: block;
+  animation: fade 1s;
+}
+.tab-active {
+  text-decoration: underline;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
